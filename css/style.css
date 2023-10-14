@@ -57,6 +57,80 @@ box-shadow: 3px 3px 6px #b1b1b1;/* Sombra Menu */
 
 
 /* Fim Estilo Carousel */
+
+/* Início Estilo Media >> Mobile */
+@media (max-width:600px) {
+    #menu {
+        display: block;
+        position: absolute;
+        width: 15em;
+        top: 70px;
+        right: 0px;
+        background: #e7e7e7;
+        transition: 0.6s;
+        z-index: 1000;
+        height: 0px;
+        padding-left: 5px;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+    #menu li {
+        padding-top: 30px;
+        padding: bottom 0px;
+        margin: 0 1rem;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.05); 
+    }
+    #nav.active #menu {
+        height: calc(100vh - 70px);
+        visibility: visible;
+        overflow-y: hidden;
+    }
+    #btn-mobile {
+        display: flex;
+        padding: 0.1rem;
+        font: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: 0.5rem;
+    }
+    #hamburguer {
+        border-top: 2px solid;
+        /* para aumentar ou diminuir a espessura da linha do hamburguer */
+        width: 30px;
+        /* Para Alterar a largura do hamburguer */
+        color: #003f91;
+        /* para alterar a cor do hamburguer */
+
+    }
+    #hamburguer::after,
+    #hamburguer::before {
+    content:'';
+    display: block;
+    width: 30px;
+    /* altera a largura do hamburguer,juntamente com o width anterior */
+    height: 2px;
+    background: currentColor;
+    margin-top: 4px;
+    /* altera o espaçamento entre as linhas do hamburguer */
+    position: relative;
+    border-top: 2px solid;
+    /* Para Aumentar ou diminuir a espessura linha do hamburguer,juntamente com o border-top anterior */
+
+}
+#nav.active #hamburguer {
+    border-top-color: transparent;
+}
+#nav.active #hamburguer ::before
+{
+    transform: rotate(135deg);
+    top: -7px;
+ }
+}
+ /* Fim estilo media >> mobile */
+
+
+
 /* Início estilo Banner Home */
 /* Para aplicar estilos na class utilize ponto antes do objeto */
 /* Para aplicar pontos no id, utilize a hashtag antes do objeto */
@@ -65,7 +139,7 @@ box-shadow: 3px 3px 6px #b1b1b1;/* Sombra Menu */
     height: 500px;
     margin-top: 10px;
     padding: 50px;
-    background-color: #006ccb;
+    background-color: #000000;
     box-shadow: 3px 3px 6px #b1b1b1;/* Sombra Menu */
 }
 .section-banner-home img {
@@ -76,20 +150,21 @@ box-shadow: 3px 3px 6px #b1b1b1;/* Sombra Menu */
 }
     .section-banner-home .texto-banner h1 {
 font-size: 30px;
-width: 60%;
-font-weight: 500;
-padding-bottom: 20px;
+width: 60%; /*width= Largura */
+font-weight: 500; /* Espessura do Texto */
+padding-bottom: 20px; /* Margem Interna em Baixo */
 color: white;
 }
 .section-banner-home .texto-banner p {
     font-size: 15px;
     margin-bottom: 20px;
     color: white;
+    text-align: justify;
    }
    .section-banner-home .texto-banner a {
     color: rgb(255,255,255);
      text-decoration: none;
-     background-color: #100060;
+     background-color: #c414a6;
      padding: 4px 14px;
      font-size: 15px;
    }
@@ -102,3 +177,198 @@ font-weight: bold;
 
 
 /* Fim Estilo Banner Home */
+/* Início destaque */
+.destaque h2 {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+.destaque p {
+    width: 77%;
+    text-align: center;
+    font-size: 14px;
+    margin: 30px auto;
+}
+.destaque figcaption {
+    font-size: 13px;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+.destaque #saiba-mais {
+    justify-content: center;
+    display: flex;
+    text-decoration: none;
+    color: #fdfdfd;
+    font-size: 18px;
+    font-weight: bold;
+    background: rgb(122, 121, 121);
+    margin: 30px 0px;
+    width: 25%; 
+    
+}
+.destaque .col-6 img:hover {
+    box-shadow: 3px 3px 6px #000000;
+    transition: 0.3s;
+}
+
+/* FIM estilo destaque */
+/* Início estilo Novidades */
+.novidades .text-body {
+    width: 80%;
+    margin: 70px auto;
+}
+.novidades h2 {
+    color: #000;
+    font-size: 26px;
+    width: 70%;
+}
+.novidades p {
+    color: rgb(255,255,255);
+}
+.novidades a{
+    justify-content: center;
+    display: flex;
+    text-decoration: none;
+    color: #fdfdfd;
+    font-size: 18px;
+    font-weight: bold;
+    background: rgb(0, 0, 0);
+    margin: 30px 0px;
+    width: 25%;
+    
+}
+/* Fim estilo Novidades */
+/* Início estilo galeria */
+.galeria {
+    margin: 60px auto 20px;
+    /* Quando tivermos 4 valores no margin = top / right / botton / left > Exemplo: margin: 60px 60px 60px */
+    /* Quando tivermos tres valores= top / right and left / botton > Exemplo: 60px auto 60px */
+    /* Quando tivermos 1 valor = top,botton,right and left serão identicos > Exemplo: Margin: 60px 30px */
+    /* Essa Regra se aplica tambem ao padding. */
+}
+.galeria .container {
+    margin-left: 11%;
+}
+.galeria h2 {
+    text-align: center;
+    font-size: 24px;    
+}
+.galeria p {
+    text-align: center;
+    width: 50%;
+    margin: 14px auto 50px; 
+}
+.galeria .galery {
+    width: 30%;
+    margin: 14px auto 50px;
+}
+.galeria .gallery img {
+    width: 80%;
+    height: 80%;
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;
+    display: block;
+}
+.galeria .gallery img:hover {
+    -webkit-transform: scale(1.9);
+    transform: scale(1.9);
+    box-shadow: 0 0 10px rgba(0,0,0, 0.5);
+}
+/* Fim estilo galeria */
+
+/* Início Whatsapp */
+.whatsapp {
+    position: fixed;
+    top: 400px;
+    right: 20px;
+    z-index: 200;
+}
+.whatsapp img {
+    height:70px;
+}
+
+/* Início Efeito Pulse */
+.whatsapp .pulse {
+    animation: pulse 0.7s infinite;
+    margin: 0 auto;
+    display: table;
+    margin-top: 50px;
+    animation-direction:alternate;
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+}
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-transform: scale(1);
+        -webkit-filter: brightness(110%);
+    }
+    100% {
+        -webkit-transform: scale(1.1);
+        -webkit-filter: brightness(110%);
+    }
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        filter: brightness(100%);
+    }
+    100% {
+        transform: scale(110%);
+        filter: brightness(110%);
+    }
+    
+}
+
+/* Fim Efeito Pulse */
+/* Fim whatsapp */
+/* Inicio estilo Footer (rodape) */
+.rodape {
+    padding: 50px 50px 0;
+}
+.rodape .container #logo-rodape img {
+    height: 50%;
+    width: 50%;
+    padding-left: 10px;
+    transition: transform .3s;
+    display: block;
+}
+.rodape .container #logo-rodape img:hover {
+    transform: scale(1.5);
+    box-shadow: 0 0 10px rgba(255,255,255,02);
+}
+.rodape .info-contato p {
+    margin: 0;
+}
+.rodape .linkFooter {
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+}
+.rodape .linkFooter:hover {
+    font-weight: bold;
+}
+.rodape.redes-sociais {
+    display: incline-block;
+}
+.rodape .redes-sociais img {
+    width: 50px;
+    height: 50px;
+    padding-left: 0;
+    margin-left: 0.7rem;
+    transition: transform .3s;
+    border: radius 15px;
+    /* border-radius = arredondando as extremidades da forma */
+}
+.rodape .redes-sociais img:hover {
+    z-index: 1;
+    transform: scale(1.5);
+    box-shadow: 0 0 10px rgba(0,0,0, 0.462);
+    
+}
+.rodape p.direitos {
+    text-align: center;
+    margin-top: 40px;
+}
