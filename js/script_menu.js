@@ -1,13 +1,14 @@
 // Script Responssavel Pela automação do menu hamburguer
 
-const btnMobile =  document.getElementById('btn-mobile');
+const btnMobile = document.getElementById('btn-mobile');
 // const >> declara a nossa variavel, no uso do decorrer do código
 
 function toggleMenu(event) {
-    if (event.type === 'touchstart') event.preventDefalt();
-    const nav = document.getElementById(nav);
+    if (event.type === 'touchstart') event.preventDefault();
+    const nav = document.getElementById('nav');
     nav.classList.toggle('active');
     const active = nav.classList.contains('active');
+    event.currentTarget.setAttribute('aria-expanded', active);
     if (active) {
         event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
     } else {
@@ -16,4 +17,4 @@ function toggleMenu(event) {
 }
 
 btnMobile.addEventListener('click', toggleMenu)
-btnMobile;addEventListener('touchstart', toggleMenu)
+btnMobile.addEventListener('touchstart', toggleMenu)
